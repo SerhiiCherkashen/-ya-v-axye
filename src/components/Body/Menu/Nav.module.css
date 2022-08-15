@@ -1,0 +1,13 @@
+.nav {
+  border: 3px black solid;
+  background-color: rgb(211, 137, 226);
+  width: 20%;
+  height: 400px;
+  margin: 10px;
+}
+.item {
+  color: blue;
+}
+.yellov {
+  color: yellow;
+}

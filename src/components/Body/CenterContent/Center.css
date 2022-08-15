@@ -1,0 +1,30 @@
+.center {
+  border: 3px black solid;
+  margin-top: 10px;
+  width: 97%;
+  height: 400px;
+  margin: 10px;
+  background-color: rgb(180, 233, 112);
+}
+.citi {
+  height: 170px;
+  width: 95%;
+  margin: 20px;
+  border: 3px red solid;
+  display: flex;
+  justify-content: flex-start;
+}
+.citi img {
+  height: 150px;
+  border: 3px black solid;
+  display: flex;
+  justify-content: flex-start;
+}
+.apl img {
+  width: 60px;
+  height: 60px;
+  border: 3px black solid;
+}
+.al1 {
+  display: block;
+}

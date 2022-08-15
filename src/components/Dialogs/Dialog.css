@@ -1,0 +1,7 @@
+.dialogContent {
+  width: 97%;
+  height: 400px;
+  margin: 10px;
+  background-color: pink;
+  border: 3px green solid;
+}
