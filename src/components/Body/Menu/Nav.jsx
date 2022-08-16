@@ -11,11 +11,14 @@ let Nav =()=>{
             <a href="/dialogs">Messedg</a>
             </div>
           <div className={classes.item}>
-            <a  >  News</a></div>
+            <a href="/news" >News</a>
+            </div>
           <div className={classes.item}>
-            <a  >  Music</a></div>
+            <a href="/music" >Music</a>
+            </div>
           <div className={classes.item}>
-            <a  >  Setings</a></div>
+            <a href="/seting" >Setings</a>
+            </div>
         </nav>
     )
 }
