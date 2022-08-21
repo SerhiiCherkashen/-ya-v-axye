@@ -1,3 +1,13 @@
 .content {
   display: flex;
 }
+.menu {
+  width: 20%;
+  height: 400px;
+  margin: 1%;
+}
+.right {
+  width: 78%;
+  height: 400px;
+  margin: 1%;
+}

@@ -1,0 +1,15 @@
+.content {
+  width: 100%;
+  height: 100%;
+  background-color: powderblue;
+  display: flex;
+}
+.name a {
+  text-decoration: none;
+}
+.name {
+  padding: 10px;
+}
+.lists {
+  padding: 10px;
+}

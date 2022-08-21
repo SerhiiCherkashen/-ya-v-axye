@@ -1,0 +1,12 @@
+.dialogContent {
+  width: 100%;
+  height: 100%;
+  background-color: pink;
+  display: flex;
+}
+.name {
+  padding: 10px;
+}
+.name a {
+  text-decoration: none;
+}
