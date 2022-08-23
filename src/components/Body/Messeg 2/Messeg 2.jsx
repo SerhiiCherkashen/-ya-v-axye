@@ -21,25 +21,29 @@ let Messeg=(props)=>{
                     {id:3, name: 'Sasha'},
                     {id:4, name: 'Mikola'},
                     {id:5, name: 'Vitia'},
-                    {id:6, name: 'Staici'}]
+                    {id:6, name: 'Staici'}
+                ]
+    let listdata=[  {id : 1,list :'Hello'},
+                    {id : 2,list :'Hi'},
+                    {id : 3,list :'Privet'},
+                    {id : 4,list :'Fack'},
+                    {id : 5,list :'HoHoHo'},
+                    {id : 6,list :"Gooooood morning VIETNAM" },
+                ]
+    let messegelement=messegdata.map(dialogs=>{
+        return(<MessegName id={dialogs.id} name={dialogs.name}/>  )
+    } 
+) 
+    let listelements=listdata.map(pismo=> <Lists list={pismo.list} />)
+            
  return(
     <div className={mes.content} >
     <h1>MESSEG</h1>
         <div className={mes.name}>
-             <MessegName id={messegdata[0].id} name={messegdata[0].name}/>
-             <MessegName id={messegdata[1].id} name={messegdata[1].name}/>
-             <MessegName id={messegdata[2].id} name={messegdata[2].name}/>
-             <MessegName id={messegdata[3].id} name={messegdata[3].name}/>
-             <MessegName id={messegdata[4].id} name={messegdata[4].name}/>
-             <MessegName id={messegdata[5].id} name={messegdata[5].name}/> 
+            {messegelement}
         </div>
         <div className={mes.lists}>
-                    <Lists list="Hi" />
-                    <Lists list="Hello" />
-                    <Lists list="Privet" />
-                    <Lists list="Fack" />
-                    <Lists list="HoHoHo" />
-                    <Lists list="Gooooood morning VIETNAM" />
+            {listelements}
         </div>
     </div>
   )

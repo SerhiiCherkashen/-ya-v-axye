@@ -23,6 +23,9 @@ let Nav =()=>{
           <div className={classes.item}>
             <NavLink to="/seting"  activeClassName={classes.activeLink} >Setings</NavLink>
             </div>
+          <div className={classes.item}>
+            <NavLink to="/expiriens"  activeClassName={classes.activeLink} >Expiriens</NavLink>
+            </div>
         </nav>
     )
 }
