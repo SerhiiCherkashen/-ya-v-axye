@@ -4,13 +4,15 @@ import Posts from './Posts/Posts'
 import ImagenCentr from './Imegen/ImegenCentr'
 
 
-let Center=()=>{
+let Center=(props)=>{
+
+
     return(
         <center className="center">
-          <ImagenCentr/>
-      <div className='podcentrom'>
-             <Posts/>
-             </div>
+             <ImagenCentr/>
+          <div className='podcentrom'>
+             <Posts messegdata={props.state.messegdata}   />
+          </div>
       </center>
     )}
     export default Center 

@@ -1,30 +1,11 @@
 import React from "react";
 import exp from './Expiriens.module.css';
 import { NavLink, Route } from "react-router-dom";
-// import ExpMenu from './ExpMenu/Expmenu'
+import ExpMenu from './ExpMenu/Expmenu';
+import ExpContent from './ExpContent/Expcontent'
 
 
-let ExpMenu=(props)=>{
-    return(
-        <div className={exp.link} >
-        <div>
-            <NavLink to='/expiriens/qwerty' >Qwerty</NavLink>
-        </div>
-        <div>
-            <NavLink to='/expiriens/asd' >Asd</NavLink>
-        </div>
-        <div>
-            <NavLink to='/expiriens/pop' >Pop</NavLink>
-        </div>
-        </div>
-    )
-}
-    let ExpContent=(props)=>{
-    return(
-    <div>
-         <h1>HYI</h1>
-    </div>
-)}
+
 let Expiriens=(props)=>{
     return( 
         <div  className={exp.content} >
@@ -32,7 +13,7 @@ let Expiriens=(props)=>{
             <ExpMenu/>
             </div>
             <div className={exp.right} >
-            <ExpContent/>
+            <ExpContent leftdata={props.state.leftdata} rightdata={props.state.rightdata} />
             </div>
         </div>
     )

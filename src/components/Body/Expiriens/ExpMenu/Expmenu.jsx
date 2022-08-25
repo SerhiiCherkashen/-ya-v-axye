@@ -1,9 +1,20 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import exp from './../Expiriens.module.css';
+import { NavLink, Route } from "react-router-dom";
 
-let Expdialogi=(props)=>{
+let ExpMenu=(props)=>{
     return(
-        <h1>ExpMenu</h1>
+        <div className={exp.link} >
+        <div>
+            <NavLink to='/expiriens/qwerty' >Qwerty</NavLink>
+        </div>
+        <div>
+            <NavLink to='/expiriens/asd' >Asd</NavLink>
+        </div>
+        <div>
+            <NavLink to='/expiriens/pop' >Pop</NavLink>
+        </div>
+        </div>
     )
 }
-export default Expdialogi
+export default ExpMenu

@@ -11,10 +11,12 @@ import News from './components/Body/News/News';
 import Music from './components/Body/Music/Music';
 import Seting from './components/Body/Seting/Seting';
 import Expiriens from './components/Body/Expiriens/Expiriens'
+import Povtordialogs from './components/Body/Povtordialogs/Povtordialogs';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 
-let App = () => {
+let App = (props) => {
+
   return (
     < BrowserRouter>
       <div className="app-w" >
@@ -24,13 +26,14 @@ let App = () => {
             < Nav />
           </div>
           <div className='right' >
-            <Route path='/centr' component={Centr} />
-            <Route path='/dialogs' component={Dialogs} />
-            <Route path='/messeg' component={Messeg} />
-            <Route path='/news' component={News} />
-            <Route path='/music' component={Music} />
-            <Route path='/seting' component={Seting} />
-            <Route path='/expiriens' component={Expiriens} />
+            <Route path='/centr' render={() => < Centr state={props.appState.centrpage} />} />
+            <Route path='/dialogs' render={() => <Dialogs />} />
+            <Route path='/messeg' render={() => <Messeg state={props.appState.messegepage} />} />
+            <Route path='/news' render={() => <News />} />
+            <Route path='/music' render={() => <Music />} />
+            <Route path='/seting' render={() => <Seting />} />
+            <Route path='/expiriens' render={() => <Expiriens state={props.appState.expirienspage} />} />
+            <Route path='/povtor' render={() => <Povtordialogs state={props.appState.povtorpage} />} />
           </div>
         </div>
       </div>

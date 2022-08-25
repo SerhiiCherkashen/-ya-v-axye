@@ -5,15 +5,23 @@ import Post from './Post/Post'
  
 
 let Posts =(props)=>{
-    let messegdata=[{id :1 ,messeg :'Hello world' , like : 7},
-                    {id :2 ,messeg : 'I am a apple' , like : 1},
-                    {id :3 ,messeg :'My name Jekk' , like : 29},
-                    {id :4 ,messeg :'Hello man' , like : 131}, ]
-
-    let posts=messegdata.map(el=> <Post messeg={el.messeg} like={el.like}/>)  
+    let posts=   props.messegdata.map(el=> <Post messeg={el.messeg} like={el.like}/>)  
+    
+  let addPost = () => {
+    let text = document.getElementById('new-post').value
+    alert(text)
+}
     return(
+        <div>
+        <div className={p.button} >
+          <textarea  id='new-post'  ></textarea> 
+        </div>
+        <div className={p.button}  >    
+          <button onClick={ addPost } >add Close</button>
+        </div>
         <div className={p.post}>
             { posts}
+        </div>
         </div>
     )
 }
