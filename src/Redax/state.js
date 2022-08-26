@@ -1,4 +1,4 @@
-import mes from './../components/Body/Messeg 2/Messeg 2'
+import { rerenderEntireTree } from '../render'
 
 let state = {
     expirienspage: {
@@ -48,5 +48,17 @@ let state = {
     }
 }
 
+export let importPosts = (post) => {
+    let newPost = {
+        id: 0,
+        messeg: post,
+        like: 0,
+    }
+    return (
+        state.centrpage.messegdata.push(newPost),
+        rerenderEntireTree(state)
+
+    )
+}
 
 export default state

@@ -18,26 +18,29 @@ import { BrowserRouter, Route } from 'react-router-dom';
 let App = (props) => {
 
   return (
-    < BrowserRouter>
-      <div className="app-w" >
-        <Header />
-        <div className='content' >
-          <div className='menu' >
-            < Nav />
-          </div>
-          <div className='right' >
-            <Route path='/centr' render={() => < Centr state={props.appState.centrpage} />} />
-            <Route path='/dialogs' render={() => <Dialogs />} />
-            <Route path='/messeg' render={() => <Messeg state={props.appState.messegepage} />} />
-            <Route path='/news' render={() => <News />} />
-            <Route path='/music' render={() => <Music />} />
-            <Route path='/seting' render={() => <Seting />} />
-            <Route path='/expiriens' render={() => <Expiriens state={props.appState.expirienspage} />} />
-            <Route path='/povtor' render={() => <Povtordialogs state={props.appState.povtorpage} />} />
-          </div>
+    <div className="app-w" >
+      <Header />
+      <div className='content' >
+        <div className='menu' >
+          < Nav />
+        </div>
+        <div className='right' >
+          <Route path='/centr' render={() => < Centr
+            state={props.appState.centrpage}
+            newPost={props.importPosts} />} />
+          <Route path='/dialogs' render={() => <Dialogs />} />
+          <Route path='/messeg' render={() => <Messeg
+            state={props.appState.messegepage} />} />
+          <Route path='/news' render={() => <News />} />
+          <Route path='/music' render={() => <Music />} />
+          <Route path='/seting' render={() => <Seting />} />
+          <Route path='/expiriens' render={() => <Expiriens
+            state={props.appState.expirienspage} />} />
+          <Route path='/povtor' render={() => <Povtordialogs
+            state={props.appState.povtorpage} />} />
         </div>
       </div>
-    </BrowserRouter>
+    </div>
   );
 }
 export default App;

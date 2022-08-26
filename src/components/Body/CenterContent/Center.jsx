@@ -11,7 +11,7 @@ let Center=(props)=>{
         <center className="center">
              <ImagenCentr/>
           <div className='podcentrom'>
-             <Posts messegdata={props.state.messegdata}   />
+             <Posts messegdata={props.state.messegdata}  />
           </div>
       </center>
     )}
