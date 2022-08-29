@@ -17,12 +17,21 @@ let Povtordialogs = (props) => {
     let textsdata =   props.state.texts.map(iter => <Texts el={iter.text} />)
     let fn=()=>{
         let area = document.getElementById('area').value
-    alert(area) }
-
+    alert(area) 
+    }
         let newPostElement=React.createRef()
-        let redj= ()=>{
-        let text=   newPostElement.current.value
+        let redj =()=>{
+        let text = newPostElement.current.value
         alert(text)
+    }
+    let a =()=>{
+        let pershii =document.getElementById('experement1').value
+        alert(pershii)
+    } 
+    let secondExperement=React.createRef()
+    let second =()=>{
+        let content = secondExperement.current.value
+        alert(content)
     }
 
 
@@ -40,6 +49,14 @@ let Povtordialogs = (props) => {
                 <textarea ref={newPostElement} ></textarea>
                 <button onClick={redj } >REF</button>
 
+            </div>
+            <div>
+                <textarea id='experement1' ></textarea>
+                <button onClick={a} >FirstExp</button>
+            </div>
+            <div>
+                <textarea ref={secondExperement}  ></textarea>
+                <button  onClick={second} >second</button>
             </div>
             <div className='pnames'>
                 {namesdata}

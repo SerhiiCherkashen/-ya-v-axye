@@ -48,17 +48,17 @@ let state = {
     }
 }
 
-export let importPosts = (post) => {
-    let newPost = {
-        id: 0,
-        messeg: post,
-        like: 0,
-    }
-    return (
-        state.centrpage.messegdata.push(newPost),
-        rerenderEntireTree(state)
+// export let importPosts = (post) => {
+//     let newPost = {
+//         id: 0,
+//         messeg: post,
+//         like: 0,
+//     }
+//     return (
+//         state.centrpage.messegdata.push(newPost),
+//         rerenderEntireTree(state)
 
-    )
-}
+//     )
+// }
 
 export default state
