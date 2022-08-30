@@ -27,18 +27,18 @@ let App = (props) => {
           </div>
           <div className='right' >
             <Route path='/centr' render={() => < Centr
-              state={props.appState.centrpage}
-              newPost={props.importPosts} />} />
+              state={props.state.centrpage}
+              addPost={props.addPost} />} />
             <Route path='/dialogs' render={() => <Dialogs />} />
             <Route path='/messeg' render={() => <Messeg
-              state={props.appState.messegepage} />} />
+              state={props.state.messegepage} />} />
             <Route path='/news' render={() => <News />} />
             <Route path='/music' render={() => <Music />} />
             <Route path='/seting' render={() => <Seting />} />
             <Route path='/expiriens' render={() => <Expiriens
-              state={props.appState.expirienspage} />} />
+              state={props.state.expirienspage} />} />
             <Route path='/povtor' render={() => <Povtordialogs
-              state={props.appState.povtorpage} />} />
+              state={props.state.povtorpage} />} />
           </div>
         </div>
       </div>

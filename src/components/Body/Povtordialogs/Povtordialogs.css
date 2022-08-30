@@ -4,6 +4,9 @@
   background-color: aqua;
   display: flex;
 }
+.pOnClick {
+  display: block;
+}
 .pnames {
   padding: 20px;
 }

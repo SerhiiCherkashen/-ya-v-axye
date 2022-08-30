@@ -33,6 +33,16 @@ let Povtordialogs = (props) => {
         let content = secondExperement.current.value
         alert(content)
     }
+    let func=()=>{
+        let tet= document.getElementById('summer').value
+        alert(tet)
+    }
+    let oktober = React.createRef()
+    let september=()=>{
+        let qwe=oktober.current.value
+        alert(qwe)
+    }
+    
 
 
     return (
@@ -40,6 +50,7 @@ let Povtordialogs = (props) => {
             <div>
                 <h1>Povtordialogs</h1>
             </div>
+            <div  className='pOnVlick' >  
             <div>
                 <textarea id='area' ></textarea>
                 <button onClick={fn } >click</button>
@@ -55,8 +66,17 @@ let Povtordialogs = (props) => {
                 <button onClick={a} >FirstExp</button>
             </div>
             <div>
-                <textarea ref={secondExperement}  ></textarea>
+                <textarea ref={secondExperement} ></textarea>
                 <button  onClick={second} >second</button>
+            </div>
+            <div>
+                <textarea id='summer'></textarea>
+                <button  onClick={func}>  Leto</button>
+            </div>
+            <div>
+                <textarea ref={oktober}  ></textarea>
+                <button onClick={september}  >autem</button>
+            </div>
             </div>
             <div className='pnames'>
                 {namesdata}

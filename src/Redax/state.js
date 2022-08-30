@@ -47,6 +47,17 @@ let state = {
         ],
     }
 }
+export let addPost = (Postmesseg) => {
+    let newPost = {
+        id: 0,
+        messeg: Postmesseg,
+        like: 0,
+    }
+    state.centrpage.messegdata.push(newPost)
+    rerenderEntireTree(state)
+}
+
+export default state
 
 // export let importPosts = (post) => {
 //     let newPost = {
@@ -56,9 +67,7 @@ let state = {
 //     }
 //     return (
 //         state.centrpage.messegdata.push(newPost),
-//         rerenderEntireTree(state)
+// // / /// / // / / / // rerenderEntireTree(state)
 
 //     )
 // }
-
-export default state
