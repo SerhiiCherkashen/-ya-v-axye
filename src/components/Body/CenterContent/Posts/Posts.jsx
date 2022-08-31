@@ -5,12 +5,17 @@ import Post from './Post/Post'
 let Posts =(props)=>{
     let posts=   props.messegdata.map(el=> <Post messeg={el.messeg} like={el.like}/>)  
     
-    let newPost =React.createRef()
+    let newPost =React.createRef();
+
     let addPost =()=>{
-      let con = newPost.current.value
-      props.addPost(con)
-      newPost.current.value=' '
+      let text = newPost.current.value
+      props.addPost(text)
+      props.updaiteNewPostText('')
     } 
+    let onPostChange=()=>{
+      let text = newPost.current.value
+      props.updaiteNewPostText(text)
+    }
   //   let addPost = () => {
   //     let text = document.getElementById('newPost').value
   //     props.addPost(text)
@@ -18,7 +23,7 @@ let Posts =(props)=>{
       return(
           <div>
             <div className={p.button}>        
-            <textarea  ref={newPost}  ></textarea>   
+            <textarea  onChange={onPostChange} ref={newPost} value={props.newPostText} /> 
             <button onClick={ addPost } >add Close</button>
           </div>
           <div className={p.post}>

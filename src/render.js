@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { addPost } from './Redax/state';
+import { addPost, updaiteNewPostText } from './Redax/state';
 
 export let rerenderEntireTree = (state) => {
 
@@ -11,7 +11,10 @@ export let rerenderEntireTree = (state) => {
     root.render(
 
         < React.StrictMode >
-            <App state={state} addPost={addPost} />
+            <App state={state}
+                addPost={addPost}
+                updaiteNewPostText={updaiteNewPostText}
+            />
         </React.StrictMode >
     );
 }

@@ -30,6 +30,7 @@ let state = {
         { id: 2, messeg: 'I am a apple', like: 1 },
         { id: 3, messeg: 'My name Jekk', like: 29 },
         { id: 4, messeg: 'Hello man', like: 131 }],
+        newPostText: "way-samurai"
     },
     povtorpage: {
 
@@ -47,13 +48,18 @@ let state = {
         ],
     }
 }
-export let addPost = (Postmesseg) => {
+window.state = state
+export let addPost = () => {
     let newPost = {
         id: 0,
-        messeg: Postmesseg,
+        messeg: state.centrpage.newPostText,
         like: 0,
     }
     state.centrpage.messegdata.push(newPost)
+    rerenderEntireTree(state)
+}
+export let updaiteNewPostText = (newText) => {
+    state.centrpage.newPostText = newText
     rerenderEntireTree(state)
 }
 
