@@ -1,7 +1,6 @@
-// let rerenderEntireTree = () => {
-//     console.log('State change')
-// }
-import { rerenderEntireTree } from '../render'
+let rerenderEntireTree = () => {
+    console.log('State change')
+}
 
 let state = {
     expirienspage: {
@@ -33,7 +32,7 @@ let state = {
         { id: 2, messeg: 'I am a apple', like: 1 },
         { id: 3, messeg: 'My name Jekk', like: 29 },
         { id: 4, messeg: 'Hello man', like: 131 }],
-        // newPostText: "Mercedes-Benz"
+        newPostText: "Mercedes-Benz"
     },
     povtorpage: {
 
@@ -52,23 +51,23 @@ let state = {
     }
 }
 // window.state = state
-export let addPost = (messedVvod) => {
+export let addPost = () => {
     let newPost = {
         id: 0,
-        messeg: messedVvod,
+        messeg: state.centrpage.newPostText,
         like: 0,
     }
     state.centrpage.messegdata.push(newPost)
-    // state.centrpage.newPostText = ''
+    state.centrpage.newPostText = ''
     rerenderEntireTree(state)
 }
-// export let updaiteNewPostText = (newText) => {
-//     state.centrpage.messegdatta = newText
-// rerenderEntireTree(state)
-// }
-// export let subscribe = (ubserver) => {
-//     rerenderEntireTree = ubserver
-// }
+export let updaiteNewPostText = (newText) => {
+    state.centrpage.messegdatta = newText
+    rerenderEntireTree(state)
+}
+export let subscribe = (ubserver) => {
+    rerenderEntireTree = ubserver
+}
 export default state
 
 // export let importPosts = (post) => {
