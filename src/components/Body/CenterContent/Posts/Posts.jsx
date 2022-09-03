@@ -8,9 +8,9 @@ let Posts =(props)=>{
     let newPost =React.createRef();
 
     let addPost =()=>{
-      // let text = newPost.current.value   ?
+      let text = newPost.current.value   
       props.addPost(text)
-      // newPost.current.value=''  ?
+      newPost.current.value=''  
     } 
     let onPostChange=()=>{
       let text = newPost.current.value
