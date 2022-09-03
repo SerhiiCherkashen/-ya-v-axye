@@ -10,12 +10,12 @@ let Posts =(props)=>{
     let addPost =()=>{
       let text = newPost.current.value
       props.addPost(text)
-      props.updaiteNewPostText('')
+      newPost.current.value=''
     } 
-    let onPostChange=()=>{
-      let text = newPost.current.value
-      props.updaiteNewPostText(text)
-    }
+    // let onPostChange=()=>{
+    //   let text = newPost.current.value
+    //   props.updaiteNewPostText('')
+    // }
   //   let addPost = () => {
   //     let text = document.getElementById('newPost').value
   //     props.addPost(text)
@@ -23,7 +23,9 @@ let Posts =(props)=>{
       return(
           <div>
             <div className={p.button}>        
-            <textarea  onChange={onPostChange} ref={newPost} value={props.newPostText} /> 
+            <textarea ref={newPost}  /> 
+            {/* onChange={onPostChange}  */}
+            {/* value={props.newPostText} */}
             <button onClick={ addPost } >add Close</button>
           </div>
           <div className={p.post}>

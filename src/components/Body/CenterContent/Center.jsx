@@ -14,7 +14,8 @@ let Center=(props)=>{
              <Posts messegdata={props.centrpage.messegdata}
                     newPostText={props.centrpage.newPostText}
                     addPost={props.addPost} 
-                    updaiteNewPostText={props.updaiteNewPostText}/>
+                    updaiteNewPostText={props.updaiteNewPostText}
+                    />
           </div>
       </center>
     )}

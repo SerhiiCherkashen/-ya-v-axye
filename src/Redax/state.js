@@ -1,3 +1,6 @@
+// let rerenderEntireTree = () => {
+//     console.log('State change')
+// }
 import { rerenderEntireTree } from '../render'
 
 let state = {
@@ -30,7 +33,7 @@ let state = {
         { id: 2, messeg: 'I am a apple', like: 1 },
         { id: 3, messeg: 'My name Jekk', like: 29 },
         { id: 4, messeg: 'Hello man', like: 131 }],
-        newPostText: "way-samurai"
+        // newPostText: "Mercedes-Benz"
     },
     povtorpage: {
 
@@ -48,21 +51,24 @@ let state = {
         ],
     }
 }
-window.state = state
-export let addPost = () => {
+// window.state = state
+export let addPost = (messedVvod) => {
     let newPost = {
         id: 0,
-        messeg: state.centrpage.newPostText,
+        messeg: messedVvod,
         like: 0,
     }
     state.centrpage.messegdata.push(newPost)
+    // state.centrpage.newPostText = ''
     rerenderEntireTree(state)
 }
-export let updaiteNewPostText = (newText) => {
-    state.centrpage.newPostText = newText
-    rerenderEntireTree(state)
-}
-
+// export let updaiteNewPostText = (newText) => {
+//     state.centrpage.messegdatta = newText
+// rerenderEntireTree(state)
+// }
+// export let subscribe = (ubserver) => {
+//     rerenderEntireTree = ubserver
+// }
 export default state
 
 // export let importPosts = (post) => {
