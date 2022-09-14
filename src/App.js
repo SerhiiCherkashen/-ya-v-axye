@@ -28,8 +28,7 @@ let App = (props) => {
           <div className='right' >
             <Route path='/centr' render={() => < Centr
               centrpage={props.state.centrpage}
-              addPost={props.addPost}
-              updaiteNewPostText={props.updaiteNewPostText} />} />
+              dispatch={props.dispatch} />} />
             <Route path='/dialogs' render={() => <Dialogs />} />
             <Route path='/messeg' render={() => <Messeg
               state={props.state.messegepage} />} />

@@ -13,8 +13,7 @@ let Center=(props)=>{
           <div className='podcentrom'>
              <Posts messegdata={props.centrpage.messegdata}
                     newPostText={props.centrpage.newPostText}
-                    addPost={props.addPost} 
-                    updaiteNewPostText={props.updaiteNewPostText}
+                    dispatch={props.dispatch} 
                     />
           </div>
       </center>

@@ -1,29 +1,29 @@
 import React from 'react'
 import p from './Posts.module.css'
 import Post from './Post/Post'
+import {addpostActionCreater,updaitenewposttextActionCreater} from '../../../../Redax/state'
 
 let Posts =(props)=>{
     let posts=   props.messegdata.map(el=> <Post messeg={el.messeg} like={el.like}/>)  
     
-    let newPost =React.createRef();
+    let newPost = React.createRef();
 
     let addPost =()=>{
-      let text = newPost.current.value   
-      props.addPost(text)
-      newPost.current.value=''  
+      
+      props.dispatch(addpostActionCreater());
+      
     } 
     let onPostChange=()=>{
+      
       let text = newPost.current.value
-      props.updaiteNewPostText('')
+      let action= (updaitenewposttextActionCreater(text));
+      props.dispatch(action)
+      
     }
-  //   let addPost = () => {
-  //     let text = document.getElementById('newPost').value
-  //     props.addPost(text)
-  // }
       return(
           <div>
             <div className={p.button}>        
-            <textarea ref={newPost}  onChange={onPostChange}  
+            <textarea  onChange={onPostChange  }  ref={ newPost } 
            value={props.newPostText} /> 
             <button onClick={ addPost } >add Close</button>
           </div>
