@@ -31,7 +31,7 @@ let App = (props) => {
               dispatch={props.dispatch} />} />
             <Route path='/dialogs' render={() => <Dialogs />} />
             <Route path='/messeg' render={() => <Messeg
-              state={props.state.messegepage} />} />
+              store={props.store} />} />
             <Route path='/news' render={() => <News />} />
             <Route path='/music' render={() => <Music />} />
             <Route path='/seting' render={() => <Seting />} />

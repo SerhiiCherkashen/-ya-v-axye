@@ -1,5 +1,8 @@
-let ADD_POST = "Add-Post"
-let UPDAITE_NEW_POST_TEXT = "Updaite-New-Post-Text"
+const ADD_POST = "Add-Post"
+const UPDAITE_NEW_POST_TEXT = "Updaite-New-Post-Text"
+const UPDAITE_NEW_MESSEG_BODY = "Updait_New_Messeg_Body"
+const SAND_MESSEG = "Sand_Messeg"
+
 let store = {
     _state: {
         expirienspage: {
@@ -13,18 +16,22 @@ let store = {
             { id: 4, el: 'Dddd' }],
         },
         messegepage: {
-            listdata: [{ id: 1, list: 'Hello', imege: 'OOO' },
-            { id: 2, list: `Hi`, imege: 'OOO' },
-            { id: 3, list: 'Privet', imege: 'OOO' },
-            { id: 4, list: 'Fack', imege: 'OOO' },
-            { id: 5, list: 'HoHoHo', imege: 'OOO' },
-            { id: 6, list: "Gooooood morning VIETNAM", imege: 'OOO' }],
-            messegdatta: [{ id: 1, name: 'Stepan' },
-            { id: 2, name: 'Lena' },
-            { id: 3, name: 'Sasha' },
-            { id: 4, name: 'Mikola' },
-            { id: 5, name: 'Vitia' },
-            { id: 6, name: 'Staici' }],
+            messegdatta: [
+                { id: 1, name: 'Stepan' },
+                { id: 2, name: 'Lena' },
+                { id: 3, name: 'Sasha' },
+                { id: 4, name: 'Mikola' },
+                { id: 5, name: 'Vitia' },
+                { id: 6, name: 'Staici' }
+            ],
+            listdata: [
+                { id: 1, list: 'Hello' },
+                { id: 2, list: `Hi` },
+                { id: 3, list: 'Privet' },
+                { id: 4, list: 'Fack' },
+                { id: 5, list: 'HoHoHo' }
+            ],
+            newMessegText: " "
         },
         centrpage: {
             messegdata: [{ id: 1, messeg: 'Hello world', like: 7 },
@@ -64,7 +71,7 @@ let store = {
     },
     dispatch(action) {
 
-        if (action.type === "Add-Post") {
+        if (action.type === ADD_POST) {
             let newPost = {
                 id: 0,
                 messeg: this._state.centrpage.newPostText,
@@ -73,23 +80,34 @@ let store = {
             this._state.centrpage.messegdata.push(newPost)
             this._state.centrpage.newPostText = ''
             this._callSubscribe(this._state)
-
         }
-        if (action.type === "Updaite-New-Post-Text") {
+        if (action.type === UPDAITE_NEW_POST_TEXT) {
 
             this._state.centrpage.newPostText = action.newText
             this._callSubscribe(this._state)
-
-
+        }
+        if (action.tupe === UPDAITE_NEW_MESSEG_BODY) {
+            this._state.messegepage.newMessegText = action.body
+            this._callSubscribe(this._state)
+        }
+        if (action.type === SAND_MESSEG) {
+            debugger
+            let body = this._state.messegepage.newMessegText
+            this._state.messegepage.newMessegText = " "
+            this._state.messegepage.listdata.push({ id: 6, list: body })
+            this._callSubscribe(this._state)
+            debugger
         }
     }
 }
 
-export const addpostActionCreater = () => {
-    return { type: ADD_POST }
-}
+export const addpostActionCreater = () => ({ type: ADD_POST })
 export const updaitenewposttextActionCreater = (text) => {
     return { type: UPDAITE_NEW_POST_TEXT, newText: text }
+}
+export const SandMessegCreater = () => ({ type: SAND_MESSEG })
+export const UpdaiteNewMessegBodyCreater = (body) => {
+    return { type: UPDAITE_NEW_MESSEG_BODY, body: body }
 }
 window.state = store
 export default store
